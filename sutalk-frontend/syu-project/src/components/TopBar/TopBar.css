@@ -1,0 +1,48 @@
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #fff;
+  border-bottom: 1px solid #e9ecef;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200; /* 헤더가 항상 위 */
+  height: 50px;
+}
+
+.topbar-container h1 { color: #2670ff; }
+
+.topbar-container a { text-decoration: none; }
+
+.topbar-search { display: flex; align-items: center; }
+
+.search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background-color: #fff;
+}
+
+.topbar-container .topbar-search .search-button svg { font-size: 25px; }
+
+.search-button:hover { color: aqua; }
+
+.search-button svg {
+  font-size: 18px;
+  color: #2670ff;
+}
+
+/* ✅ 채팅 화면에서는 TopBar 숨김 (App에서 body.route-chat 토글) */
+body.route-chat .topbar-container { display: none !important; }
+
+body.route-loading .topbar-container { display: none !important; }
+
+/* ✅ TopBar가 fixed라서 본문 시작을 50px 내려주는 유틸 클래스 */
+.page-with-topbar { padding-top: 50px !important; }

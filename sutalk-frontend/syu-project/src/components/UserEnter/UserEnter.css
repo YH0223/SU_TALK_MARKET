@@ -1,0 +1,118 @@
+.user-enter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #dbe6ff 0%, #f4f4f9 100%);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  position: relative;
+}
+
+/* 뒤로가기 버튼 */
+.back-button {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: #2670ff;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.back-button:hover {
+  color: #195fe0;
+}
+
+/* 로고 */
+.logo-image {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+/* 제목 */
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  color: #222;
+}
+
+.brand {
+  color: #2670ff;
+}
+
+/* 카드형 폼 (Glassmorphism) */
+.enter-card {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 360px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.enter-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* 입력 폼 */
+.enter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.user-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.user-input:focus {
+  border-color: #2670ff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(38, 112, 255, 0.3);
+}
+
+/* 버튼 */
+.enter-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2670ff;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.enter-button:hover {
+  background-color: #1f5de0;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+  .enter-card {
+    padding: 30px 20px;
+  }
+}

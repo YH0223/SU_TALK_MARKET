@@ -1,0 +1,71 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "판매 게시글 제목 1",
+      "time": "2025-01-01",
+      "price": "10,500원",
+      "comment": "살 사람 난 원해 유...",
+      "category": "전자제품",
+      "images": ["/assets/aa.png", "/assets/default-image.png"],
+      "status": "판매중",
+      "location": "서울시 강남구"
+    },
+    {
+      "id": 2,
+      "title": "판매 게시글 제목 2",
+      "time": "2024-01-02",
+      "price": "20,000원",
+      "comment": "거의 새 상품입니다. 연락 주세요.",
+      "category": "가구",
+      "images": ["/assets/dd.png", "/assets/ee.png"],
+      "status": "예약중",
+      "location": "서울시 서초구"
+    },
+    {
+      "id": 3,
+      "title": "판매 게시글 제목 3",
+      "time": "2024-01-03",
+      "price": "30,000원",
+      "comment": "쿨거래 시 에눌 가능합니다.",
+      "category": "전자제품",
+      "images": ["/assets/ff.png"],
+      "status": "판매중",
+      "location": "서울시 송파구"
+    },
+    {
+      "id": 4,
+      "title": "판매 게시글 제목 4",
+      "time": "2024-01-04",
+      "price": "40,000원",
+      "comment": "상태 좋습니다.",
+      "category": "생활용품",
+      "images": ["/assets/gg.png", "/assets/hh.png"],
+      "status": "거래완료",
+      "location": "서울시 강동구"
+    },
+    {
+      "id": 5,
+      "title": "노트북 팝니다.",
+      "time": "2024-01-05",
+      "price": "50,000원",
+      "comment": "직거래 선호합니다.",
+      "category": "가구",
+      "images": ["/assets/ii.png"],
+      "status": "예약중",
+      "location": "서울시 마포구"
+    },
+    {
+      "id": 6,
+      "title": "판매 게시글 제목 6",
+      "time": "2024-01-05",
+      "price": "50,000원",
+      "comment": "직거래 선호합니다.",
+      "category": "전자제품",
+      "images": ["/assets/jj.png"],
+      "status": "거래완료",
+      "location": "서울시 용산구"
+    }
+  ],
+  "hasNextPage": false
+}

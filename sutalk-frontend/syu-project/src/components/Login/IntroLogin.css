@@ -1,0 +1,314 @@
+/* ================= SU-Talk Intro (Desktop: 50/50, Mobile: App-only) ================= */
+:root{
+  --bg: #f6f8ff;
+  --panel: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --brand: #1f3fb0;
+  --brand-strong: #17318a;
+  --accent: #2563eb;
+  --focus: #93c5fd;
+  --shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 10px 22px rgba(15, 23, 42, 0.08);
+}
+
+/* ── 상위 2컬럼 셸: 정확히 50 / 50 */
+.intro-shell{
+  display:grid;
+  grid-template-columns: 1fr 1fr;   /* ← 반반 고정 */
+  gap: 0;                           /* ✅ 5:5 시각 정확도 */
+  min-height: 100dvh;
+  background: var(--bg);
+  padding: 0;                       /* ✅ 좌우 패딩 제거 (정확한 반분) */
+}
+
+/* ── 좌측 프로모션 레일 */
+.promo-rail{
+  display:block;
+  background: linear-gradient(180deg, #fff8f0 0%, #fff 60%, #fff8f0 100%);
+  border-right: 1px solid #f1eade;
+}
+.promo-inner{
+  height: 100%;
+  padding: 24px;                   /* 패딩은 내부로(폭 영향 X) */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+.promo-logo{ display:flex; align-items:center; gap:14px; margin-bottom: 8px; }
+.promo-logo img{ width:48px; height:48px; object-fit:contain; }
+.promo-logo h2{ margin:0; font-size:24px; font-weight:800; color:#b45309; }
+
+.promo-card{ background:#fff; border:1px solid var(--line); border-radius:16px; padding:18px; box-shadow: var(--shadow); }
+.promo-card h3{ margin:0 0 8px; font-size:18px; color:#1f2937; }
+.promo-card p{ margin:0 0 12px; font-size:13px; color:var(--muted); }
+
+.promo-qr{ display:flex; align-items:center; gap:12px; }
+.promo-qr img{ width:84px; height:84px; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:10px; }
+.promo-qr-caption{ font-size:12px; color:#6b7280; }
+.promo-bullets{ display:flex; gap:8px; flex-wrap: wrap; margin-top: 6px; }
+.pb-item{ background:#fff; border:1px solid var(--line); padding:8px 10px; border-radius:999px; font-size:12px; color:#374151; }
+
+/* ── 우측 모바일 스테이지(컬럼 전체를 가득 채움) */
+.mobile-stage{
+  width: 100%;
+  background: #f9faff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* 외곽 베젤(데스크탑 전용 느낌) */
+.device-frame{
+  width: 100%;
+  max-width: 592px;               /* ⬅️ 520px 캔버스 + 2*16px 패딩 여유 */
+  min-height: 92dvh;
+  padding: 16px;                  /* 베젤 두께 */
+  border-radius: 28px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.08);
+  background: #ffffff;
+  display:flex; align-items:stretch; justify-content:center;
+  overflow:hidden;
+  margin: 0 auto;
+}
+
+/* 실제 앱 캔버스: 데스크탑에서 더 넓게 (요청 반영) */
+.app-canvas{
+  position: relative;             /* ✅ 스플래시 전면 덮기 기준 */
+  width: clamp(460px, 46vw, 520px);  /* ⬅️ 데스크탑에서 더 크게 */
+  max-width: 100%;
+  min-height: 100%;
+  background: var(--bg);
+  border-radius: 20px;
+  overflow: hidden;               /* ✅ 내부 요소(좌측 타이틀) 넘침 방지 → 잔상처럼 보이는 텍스트 차단 */
+}
+
+/* ── 실제 앱 내용 (기존 클래스) */
+.intro-wrapper{
+  display:flex; justify-content:center; align-items:center;
+  min-height: 100%;
+  background: transparent;
+  padding: 0;
+}
+
+/* ✅ 스플래시: 절대 배치로 “잔상 0” (캔버스 전면 덮음) */
+.intro-logo-group{
+  position: absolute;
+  inset: 0;
+  display:flex; align-items:center; justify-content:center;
+  gap:16px; text-align:center;
+  background: var(--bg);
+  z-index: 2;
+}
+.intro-logo-group[style*="opacity: 0"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.logo{ width:108px; height:108px; object-fit:contain; }
+.sutalk-text{ font-size:36px; font-weight:800; letter-spacing:.2px; color:var(--brand); }
+
+/* 로그인 섹션 */
+.intro-login-container{
+  display:flex; align-items:center; justify-content:center;
+  width: 100%;
+  max-width: 420px;         /* 폼 폭(카드)이 캔버스 밖으로 새지 않도록 */
+  gap: 24px;
+  margin: 0 auto;
+}
+.left-logo-group{ flex:0 0 auto; display:flex; align-items:center; gap:12px; }
+.mini-logo{ width:68px; height:68px; object-fit:contain; }
+.mini-title{ font-size:26px; font-weight:800; color:var(--brand); letter-spacing:.2px; }
+
+.right-login{
+  flex:1; background:var(--panel);
+  padding:26px 28px; border-radius:14px;
+  border:1px solid var(--line);
+  box-shadow: var(--shadow);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+@media (hover: hover) and (pointer: fine){
+  .right-login:hover{ transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: #dce3f2; }
+}
+
+/* 폼 기본 */
+.form-container{ position:relative; width:100%; max-width:380px; transition: transform .45s ease, opacity .35s ease; }
+.slide-left{ transform: translateX(-28px); opacity:1; }
+.slide-right{ transform: translateX(28px);  opacity:1; }
+.form-field{ display:flex; flex-direction:column; gap:8px; margin-bottom:16px; }
+.form-field label{ font-size:13px; color:var(--muted); }
+.form-field input, .form-field select, .form-field button{ font: inherit; }
+.input{ width:100%; padding:12px 14px; border-radius:10px; border:1px solid var(--line); background:#fff; color:var(--text); outline:none; transition: border-color .15s ease, box-shadow .15s ease; }
+.input:focus{ border-color: var(--accent); box-shadow: 0 0 0 3px rgba(147,197,253,.35); }
+
+/* 버튼/링크 */
+.btn{ display:inline-flex; align-items:center; justify-content:center; width:100%; height:44px; border-radius:10px; border:1px solid transparent; background: var(--brand); color:#fff; font-weight:700; letter-spacing:.2px; transition: background .15s ease, transform .06s ease; cursor:pointer; user-select:none; }
+.btn:hover{ background: var(--brand-strong); }
+.btn:active{ transform: translateY(1px); }
+.btn:focus-visible{ outline:none; box-shadow: 0 0 0 4px rgba(147,197,253,.55); }
+
+.link-button{ background:none; border:none; padding:0; color: var(--accent); font-weight:600; cursor:pointer; font-size:14px; text-decoration:none; position:relative; transition: color .15s ease; }
+.link-button::after{ content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; background: currentColor; opacity:.25; transform: scaleX(0); transform-origin:left; transition: transform .18s ease; }
+.link-button:hover{ color:#1d4ed8; }
+.link-button:hover::after{ transform: scaleX(1); }
+.link-button:focus-visible{ outline: none; box-shadow: 0 0 0 3px rgba(147,197,253,.55); border-radius:6px; }
+
+.divider{ height:1px; background:var(--line); margin:16px 0; }
+.helper{ font-size:12px; color:var(--muted); }
+
+/* 모션 축소 */
+@media (prefers-reduced-motion: reduce){
+  .right-login, .form-container, .link-button::after { transition:none !important; }
+}
+
+/* ── 모바일/태블릿: 좌측 레일 숨기고 “진짜” 전체화면 */
+@media (max-width: 1100px){
+  .intro-shell{ grid-template-columns: 1fr; }
+  .promo-rail{ display:none; }
+
+  .mobile-stage{
+    background: var(--bg);
+    align-items: stretch;         /* 전체 높이 채움 */
+  }
+
+  .device-frame{
+    width: 100%;
+    max-width: none;              /* ⬅️ 가로 제한 해제 */
+    min-height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;                   /* ✅ 베젤/여백 제거 */
+    margin: 0;
+    background: transparent;      /* ✅ 바깥 흰줄 제거 */
+  }
+
+  .app-canvas{
+    width: 100%;
+    min-height: 100dvh;           /* ✅ 진짜 풀스크린 */
+    border-radius: 0;
+    box-shadow: none;
+    background: var(--bg);
+  }
+
+  /* 모바일에서는 상단 SU_Talk 바 제거 */
+  .left-logo-group{ display: none !important; }
+
+  /* 로그인 컨테이너 풀스크린 배치 */
+  .intro-login-container{
+    width: 100%;
+    max-width: 520px;
+    height: 100dvh;
+    gap: 20px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+  }
+
+  /* 스플래시/타이틀 스케일 조정 */
+  .sutalk-text{ font-size: 32px; }
+  .logo{ width: 92px; height: 92px; }
+  .mini-logo{ width: 64px; height: 64px; }
+  .mini-title{ font-size: 24px; }
+}
+
+/* 터치 환경에서 hover 무효화로 점프 방지 */
+@media (hover: none){
+  .right-login:hover{ transform: none; box-shadow: var(--shadow); border-color: var(--line); }
+}
+
+/* ✅ 데스크탑에서 mini logo/title 숨기기 */
+@media (min-width: 1101px){
+  .left-logo-group{ 
+    display: none !important;
+  }
+}
+
+/* ✅ 모바일(F12 앱 뷰)에서 로그인 카드 전체 채우기 */
+@media (max-width: 1100px){
+  .intro-login-container{
+    width: 100%;
+    height: 100dvh;
+    padding: 0;
+    margin: 0;
+  }
+
+  .right-login{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;         /* ✅ 모서리 제거 */
+    border: none;             /* ✅ 외곽선 제거 */
+    box-shadow: none;         /* ✅ 그림자 제거 */
+    padding: 24px;            /* ✅ 내부 여백만 유지 */
+    background: var(--bg);    /* ✅ 앱 배경과 동일하게 */
+  }
+}
+/* ✅ 데스크탑에서도 로그인 카드 여백 제거 (앱처럼 꽉 차게) */
+@media (min-width: 1101px){
+  .device-frame{
+    padding: 0;              /* 베젤 제거 */
+    background: transparent; /* 바깥 흰 배경 제거 */
+    box-shadow: none;        /* 그림자 제거 */
+  }
+
+  .app-canvas{
+    width: 100%;
+    border-radius: 0;
+    background: var(--bg);   /* 전체 배경 일체화 */
+  }
+
+  .intro-login-container{
+    width: 100%;
+    max-width: none;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+  }
+
+  .right-login{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: var(--bg);
+    padding: 24px 32px;
+  }
+}
+
+/* ✅ promo-card 크기 확대 및 시각적 존재감 강화 */
+.promo-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 32px 28px;           /* ⬆️ 내부 여백 확장 */
+  box-shadow: var(--shadow-lg); /* ⬆️ 살짝 더 강한 그림자 */
+  max-width: 480px;             /* ⬆️ 가로폭 넓힘 */
+  margin-top: 20px;             /* 상단 살짝 띄워 시각적 분리 */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .promo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.1);
+  }
+}
+
+.promo-card h3 {
+  margin: 0 0 12px;
+  font-size: 22px;             
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.promo-card p {
+  margin: 0;
+  font-size: 15px;             
+  line-height: 1.6;
+  color: var(--muted);
+}

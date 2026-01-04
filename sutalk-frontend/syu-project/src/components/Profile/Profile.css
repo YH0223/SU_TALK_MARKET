@@ -1,0 +1,230 @@
+/* ================= Modern Minimal Overrides (colors unchanged) ================= */
+
+/* 통일된 폰트 스택 (국문 가독성 우선) */
+.profile-container,
+.profile-topbar,
+.profile-edit-container {
+  font-family:
+    "Pretendard Variable",
+    "Noto Sans KR",
+    system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Apple SD Gothic Neo",
+    "Malgun Gothic", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Page container ---------- */
+.profile-container {
+  max-width: 640px;                 /* 살짝 좁혀 집중감 */
+  padding: 24px 16px 72px;          /* 상하 여백 리듬 */
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+.profile-header { margin: 6px 0 14px; }
+.profile-header h2 {
+  font-size: 22px;                  /* 과도한 크기 ↓ */
+  font-weight: 800;
+  letter-spacing: .1px;
+  line-height: 1.25;
+  color: #000;                      /* 기존 톤 가정 하에 유지 */
+}
+
+/* ---------- Profile card ---------- */
+.profile-info {
+  margin: 56px auto 20px;           /* 앱 탑바 고려 */
+  max-width: 520px;
+  padding: 18px 16px 16px;
+  border: 1px solid #e6e6e6;        /* 라인 색만 미세하게 정리 */
+  border-radius: 12px;
+  background: #fff;                 /* 기존 배경계열 가정 */
+  box-shadow: 0 6px 16px rgba(0,0,0,.04);
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 92px; height: 92px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: grid; place-items: center;
+  margin: 4px auto 10px;
+  box-shadow: inset 0 0 0 1px #e9e9e9;
+}
+.avatar-icon {   
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .1px;
+  margin: 6px 0 8px;
+}
+
+/* 버튼: 색상 유지, 높이/라운드/그림자만 정리 */
+.edit-profile-button {
+  padding: 9px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,.06);
+  transition: transform .06s ease, filter .18s ease;
+}
+.edit-profile-button:active { transform: translateY(1px); }
+
+/* ---------- Menu block ---------- */
+.profile-section-card,
+.profile-menu {
+  margin: 0 auto 10px;
+  max-width: 520px;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.04);
+}
+
+.menu-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 14px;
+  border-bottom: 1px solid #efefef;
+  transition: background-color .14s ease;
+}
+.menu-item:last-child { border-bottom: 0; }
+.menu-item:hover { background-color: rgba(38,112,255,.04); }  /* 기존 포인트색 투명도만 */
+
+.menu-link { display: flex; align-items: center; gap: 10px; color: inherit; }
+.menu-icon { font-size: 17px; }
+.menu-text { font-size: 15px; font-weight: 700; letter-spacing: .1px; }
+.menu-arrow { font-size: 18px; opacity: .45; }
+
+/* ---------- Posts (reviews) ---------- */
+.profile-posts { margin-top: 24px; padding: 0; }
+.profile-posts h4 {
+  margin: 0 0 10px 4px;
+  font-size: 16px; font-weight: 800; letter-spacing: .1px;
+}
+
+.profile-post-card {
+  margin: 10px 0;
+  border-radius: 12px;
+  border: 1px solid #e9e9e9;
+  background: #fff;
+  padding: 14px 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.05);
+  transition: transform .06s ease, box-shadow .2s ease;
+}
+.profile-post-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.06);
+}
+.profile-post-card h5 {
+  margin: 0 0 6px;
+  font-size: 15px; font-weight: 800; color: #2670ff; /* 기존 포인트 */
+}
+.profile-post-card p {
+  margin: 0; font-size: 14px; line-height: 1.45; color: #666;
+}
+
+/* 후기 섹션 내 ‘신고’ 버튼 한정 스타일(충돌 방지) */
+.profile-posts .edit-profile-button {
+  background-color: #ffe0e0; color: #ff5050;
+  padding: 8px 12px; border-radius: 10px; box-shadow: none;
+}
+
+/* ---------- Topbar spacing ---------- */
+.profile-topbar { height: 56px; padding: 0 14px; }
+.back-button { width: 36px; height: 36px; border-radius: 10px; }
+.back-icon { font-size: 18px; }
+.topbar-title { margin-left: 10px; font-weight: 800; letter-spacing: .1px; line-height: 1; }
+
+/* ---------- Small utils ---------- */
+a { text-decoration: none; color: inherit; }
+.sales-span { margin-left: 4px; font-weight: 600; opacity: .75; }
+
+a { text-decoration: none; color: inherit; }
+.favorate-span { margin-left: 4px; font-weight: 600; opacity: .75; }
+
+a { text-decoration: none; color: inherit; }
+.community-span { margin-left: 4px; font-weight: 600; opacity: .75; }
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 380px) {
+  .profile-container { padding: 20px 12px 68px; }
+  .profile-info { padding: 16px 12px 12px; }
+  .menu-item { padding: 12px 12px; }
+}
+
+/* ---------- Logout Button (Subtle Gray Outline style) ---------- */
+.logout-button {
+  width: 30%;                     /* ✅ 요청사항 반영: 폭 축소 */
+  padding: 6px 0;                 /* 살짝 낮은 높이 */
+  margin-top: 10px;
+  background-color: transparent;  /* 배경 제거 */
+  color: #666;                    /* 텍스트 중간톤 */
+  font-size: 13.5px;
+  font-weight: 600;
+  border: 1.5px solid #ccc;       /* 연한 회색 테두리 */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;             /* 중앙 정렬 */
+}
+
+.logout-button:hover {
+  background-color: #f7f7f7;      /* 호버 시 약간 밝게 */
+  border-color: #bbb;
+  color: #333;
+}
+
+.logout-button:active {
+  transform: translateY(1px);
+  background-color: #ededed;
+}
+/* profile.css 또는 global.css 내 확인 */
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: #444;
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+.modal-content {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

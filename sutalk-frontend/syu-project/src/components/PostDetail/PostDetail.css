@@ -1,0 +1,214 @@
+/* 공통 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 게시글 페이지 컨테이너 */
+.post-detail-container {
+  width: 100%;
+  padding: 50px 0 50px;
+  background-color: #fff;
+}
+
+.image-slider {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slider-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin: auto; /* ✅ 수직 수평 정중앙 */
+  position: absolute;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-in {
+  opacity: 1;
+  z-index: 2;
+}
+
+.fade-out {
+  opacity: 0;
+  z-index: 1;
+}
+
+/* 좌우 슬라이더 버튼 */
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 20px;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.slider-button.left {
+  left: 10px;
+}
+
+.slider-button.right {
+  right: 10px;
+}
+
+/* ●●● 슬라이드 인디케이터 */
+.indicator-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dot.active {
+  background-color: #2670ff;
+}
+
+/* 콘텐츠 영역 */
+.comment-container {
+  padding: 16px;
+  margin: 0 10px;
+}
+
+.comment-container h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+/* 카테고리 배지 */
+.category-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: #3668ff;
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+
+/* ✅ 판매자 라인 */
+.seller-info {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+  font-size: 15px;
+  color: #333;
+  gap: 6px;
+}
+
+.seller-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.seller-profile {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.seller-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.seller-name {
+  color: #666;
+  font-weight: 500;
+}
+
+.seller-name:hover {
+  text-decoration: underline;
+}
+
+/* 설명 텍스트 */
+.description-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+  margin: 20px 0 12px;
+  white-space: pre-wrap;
+  word-break: break-all; /* 긴 단어도 자동 줄바꿈 */
+  overflow-wrap: break-word;
+}
+
+/* 장소 + 날짜 */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+/* 채팅 버튼 */
+.chat-button {
+  width: 100%;
+  background-color: #2670ff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.chat-button:hover {
+  background-color: #1c5bd6;
+}
+.map-toggle {
+  cursor: pointer;
+  color: #2670ff;
+  font-weight: 600;
+  margin-top: 8px;
+  text-align: right;
+}
+
+.map-container {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s ease;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+.map-container.open {
+  height: 300px;
+  border: 1px solid #e0e0e0;
+  padding: 4px;
+}

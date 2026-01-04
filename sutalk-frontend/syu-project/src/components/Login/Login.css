@@ -1,0 +1,198 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #dbe6ff 0%, #f4f4f9 100%);
+  padding: 24px;
+  text-align: center;
+  font-family: "Pretendard", "Inter", sans-serif;
+}
+
+.login-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+.user-input {
+  width: 100%;
+  padding: 13px 16px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.25);
+  color: #6e91ff;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.user-input::placeholder {
+  color: rgba(24, 32, 55, 0.7);
+}
+
+.user-input:focus {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* ===== 버튼 ===== */
+.enter-button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #557cff, #6e91ff);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.enter-button:hover {
+  background: linear-gradient(90deg, #4a6df0, #5e85ff);
+  transform: translateY(-1px);
+}
+
+.login-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.login-container p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #444;
+}
+
+.login-container a {
+  color: #2670ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+/* ✅ 반투명 유리 카드 */
+.login-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  padding: 48px 40px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 380px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== 하단 문구 ===== */
+.login-card p {
+  margin-top: 22px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.login-card a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.login-card a:hover {
+  opacity: 0.8;
+}
+
+
+/* ===== 애니메이션 (카드 페이드 인) ===== */
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.login-card {
+  animation: floatIn 0.5s ease-out;
+}
+
+/* ===== 모바일 대응 ===== */
+@media (max-width: 768px) {
+  .login-card {
+    padding: 36px 26px;
+    border-radius: 22px;
+  }
+
+  .login-card h2 {
+    font-size: 22px;
+  }
+
+  .user-input {
+    font-size: 14px;
+  }
+}
+
+
+.login-button-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.enter-button {
+  flex: 1;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.normal-login {
+  background-color: #007bff;
+  color: white;
+}
+
+.normal-login:hover {
+  background-color: #005dc1;
+}
+
+.google-login {
+  background-color: #fff;
+  color: #444;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.google-login:hover {
+  background-color: #f7f7f7;
+}
+
+.google-icon {
+  width: 18px;
+  height: 18px;
+}

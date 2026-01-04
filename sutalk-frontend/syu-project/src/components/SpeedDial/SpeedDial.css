@@ -1,0 +1,141 @@
+:root {
+  --sd-size: 56px;
+  --sd-item: 48px;
+  --sd-gap: 12px;
+  --sd-shadow: 0 8px 20px rgba(0,0,0,.18);
+  --sd-bg: #3b82f6;
+  --sd-bg-item: #ffffff;
+  --sd-fg: #ffffff;
+  --sd-fg-item: #111827;
+  --sd-label-bg: rgba(17,24,39,.92);
+  --sd-label-fg: #fff;
+  --sd-overlay: rgba(0,0,0,.18);
+}
+
+/* 스택 순서: overlay(1100) < actions/fab(1300) < (TopBar는 1200 이상) */
+.speed-dial {
+  position: absolute; /* ✅ 내부 기준 */
+  z-index: 1300;        /* 액션/버튼이 오버레이보다 위 */
+  --sd-radius: 88px;    /* JS에서 덮어쓸 수 있음 */
+}
+
+/* FAB 위치: 화면 하단에서 충분히 띄워 다이얼이 안 잘리게 (안전영역 포함) */
+.speed-dial--br {
+  right: 16px;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 84px);
+  padding: 15px;
+}
+.speed-dial--bl {
+  left: 16px;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 84px);
+}
+.speed-dial--tr { right: 16px; top: 20px; }
+.speed-dial--tl { left: 16px; top: 20px; }
+
+/* 오버레이: 배경 클릭 시 닫기만 담당 (TopBar보다 낮게) */
+.speed-dial__overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--sd-overlay);
+  backdrop-filter: blur(0.5px);
+  z-index: 1100;
+  pointer-events: auto;
+}
+
+/* 라디얼 리스트(액션들) */
+.speed-dial__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 1300;
+}
+.speed-dial__item {
+  position: absolute;
+  transform: translate(0,0);
+  transition: transform .26s cubic-bezier(.2,.8,.2,1), opacity .2s ease;
+  opacity: 0;
+  pointer-events: none;           /* 닫힌 상태에서는 클릭 방지 */
+}
+.speed-dial.is-open .speed-dial__item {
+  transform: translate(var(--sd-x), var(--sd-y));
+  opacity: 1;
+  pointer-events: auto;          /* 열린 상태에서만 클릭 허용 */
+}
+
+/* 액션 버튼 */
+.speed-dial__action {
+  width: var(--sd-item);
+  height: var(--sd-item);
+  border-radius: 9999px;
+  border: none;
+  background: var(--sd-bg-item);
+  color: var(--sd-fg-item);
+  display: grid;
+  place-items: center;
+  box-shadow: var(--sd-shadow);
+  cursor: pointer;
+  z-index: 1300;
+}
+.speed-dial__action:active { transform: scale(.98); }
+
+/* 액션 라벨 */
+.speed-dial__label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(calc(-50% - var(--sd-gap)), calc(-50% - var(--sd-item) / 2));
+  white-space: nowrap;
+  font-size: 12px;
+  background: var(--sd-label-bg);
+  color: var(--sd-label-fg);
+  padding: 6px 8px;
+  border-radius: 8px;
+  box-shadow: var(--sd-shadow);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .18s ease;
+}
+.speed-dial__item:hover .speed-dial__label,
+.speed-dial__item:focus-within .speed-dial__label { opacity: 1; }
+
+/* 메인 FAB(+/X) */
+.speed-dial__fab {
+  width: var(--sd-size);
+  height: var(--sd-size);
+  border-radius: 9999px;
+  border: none;
+  background: var(--sd-bg);
+  color: var(--sd-fg);
+  display: grid;
+  place-items: center;
+  box-shadow: var(--sd-shadow);
+  cursor: pointer;
+  z-index: 1300;
+}
+.speed-dial__fab:active { transform: scale(.98); }
+.speed-dial__fab-icon {
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  transition: transform .24s ease;
+}
+.speed-dial.is-open .speed-dial__fab-icon { transform: rotate(90deg); }
+
+/* 작은 화면 튜닝 */
+@media (max-width: 420px) {
+  :root {
+    --sd-size: 52px;
+    --sd-item: 46px;
+  }
+}
+
+/* ✅ SpeedDial 기본 위치 (중앙 하단에 고정) */
+.speed-dial--center {
+  position: fixed;
+  bottom: 0; /* BottomBar 안에 있을 때 기준 */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+  will-change: transform;
+}

@@ -1,0 +1,100 @@
+.report-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.report-modal-content {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.report-reason-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+.report-reason-list li label {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #eee;
+  margin-bottom: 8px;
+}
+.report-reason-list li label:hover {
+  background-color: #f9f9f9;
+}
+.report-reason-list input[type="radio"] {
+  margin-top: 4px;
+  margin-right: 12px;
+}
+.reason-text strong {
+  font-weight: 600;
+}
+.reason-text p {
+  font-size: 0.9em;
+  color: #666;
+  margin: 4px 0 0;
+}
+.report-details-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 8px;
+  resize: vertical;
+}
+.report-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.report-modal-actions button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.report-modal-actions .secondary {
+  background: #fff;
+  color: #555;
+  border: 1px solid #d1d5db;
+}
+
+.report-modal-actions .secondary:hover {
+  background: #f7f7f7;
+}
+
+.report-modal-actions .primary {
+  background: #ef4444; /* Red for reporting */
+  color: #fff;
+  border: 1px solid #ef4444;
+}
+
+.report-modal-actions .primary:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+.report-modal-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

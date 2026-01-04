@@ -1,0 +1,45 @@
+.loading-Container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2670ff;
+}
+
+.logo {
+  width: 250px;
+  height: 250px;
+}
+
+.title-Container {
+  animation: fadeIn 0.8s ease-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-Container .title-Container h1 {
+  line-height: 1.5;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .main-Container .title-Container h1 {
+    font-size: 24px;
+  }
+}

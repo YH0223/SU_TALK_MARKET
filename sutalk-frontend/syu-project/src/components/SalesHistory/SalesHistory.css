@@ -1,0 +1,197 @@
+/* ================== SalesHistory Modern Minimal (Balanced Button Layout) ================== */
+
+/* ---------- Base ---------- */
+.sales-history-container {
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 24px 16px 80px;
+  font-family:
+    "Pretendard Variable",
+    "Noto Sans KR",
+    system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Apple SD Gothic Neo",
+    "Malgun Gothic", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Header ---------- */
+.sales-history-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.sales-history-header h2 {
+  color: #2670ff;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.1px;
+  margin: 0;
+  text-align: center;
+}
+
+.back-button {
+  position: absolute;
+  left: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2670ff;
+  font-size: 18px;
+  padding: 4px;
+  margin: -10px;
+}
+
+/* ---------- Tabs ---------- */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 16px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 12px 10px;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.tab-button:hover {
+  background-color: rgba(38, 112, 255, 0.06);
+}
+.tab-button.active {
+  border-bottom: 2.5px solid #2670ff;
+  color: #2670ff;
+  font-weight: 700;
+}
+
+/* ---------- Sales List ---------- */
+.sales-list {
+  margin-top: 24px;
+}
+
+.sales-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #e9e9e9;
+  transition: background-color 0.15s ease;
+}
+.sales-item:hover {
+  background-color: rgba(38, 112, 255, 0.03);
+}
+
+/* ---------- Item Thumbnail ---------- */
+.sales-image {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 12px;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* ---------- Item Details ---------- */
+.sales-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+
+.item-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+}
+
+.item-price {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+}
+
+.item-date {
+  font-size: 12.5px;
+  color: #888;
+}
+
+/* ---------- Top Right Actions (edit/delete icons) ---------- */
+.actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 6px;
+}
+
+.actions button {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background-color: #fff;
+  border: 1.3px solid #2670ff;
+  color: #2670ff;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.actions button:hover {
+  background-color: #2670ff;
+  color: white;
+  transform: translateY(-1px);
+}
+.actions button:active {
+  transform: translateY(1px);
+}
+
+/* ---------- Bottom Status Buttons ---------- */
+.status-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 36px; /* 아이콘과 충분히 간격 */
+}
+
+.status-buttons button {
+  flex: 1;
+  border: 1.4px solid #2670ff;
+  background-color: #fff;
+  color: #2670ff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.status-buttons button:hover {
+  background-color: #2670ff;
+  color: white;
+  transform: translateY(-1px);
+}
+.status-buttons button:active {
+  transform: translateY(1px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 420px) {
+  .sales-history-container { padding: 20px 12px 64px; }
+  .sales-image { width: 64px; height: 64px; }
+  .tab-button { font-size: 13px; padding: 10px; }
+}

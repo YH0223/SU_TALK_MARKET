@@ -1,0 +1,158 @@
+.post-container {
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #2670ff;
+}
+
+.post-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.post-container .post-header h3 {
+  justify-content: center;
+  color: #2670ff;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #2670ff;
+  position: absolute;
+  left: 10px;
+}
+
+.save-button {
+  background: none;
+  border: none;
+  color: #2670ff;
+  width: 33%;
+}
+
+.image-upload {
+  margin: 5px 0 5px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-label {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px dashed #2670ff;
+  border-radius: 8px;
+  width: 70px;
+  height: 70px;
+}
+
+.post-form input,
+.post-form textarea,
+.post-form button {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.post-form input,
+.post-form textarea {
+  padding: 10px;
+  border: 1px solid #2670ff;
+}
+
+/* 카테고리 선택 드롭다운 스타일 */
+.category-select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  appearance: none; /* 기본 드롭다운 화살표 제거 */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  margin-bottom: 20px;
+}
+
+/* 호버 및 포커스 효과 */
+.category-select:hover {
+  border-color: #2670ff;
+}
+
+.category-select:focus {
+  outline: none;
+  border-color: #2670ff;
+  box-shadow: 0 0 0 2px rgba(38, 112, 255, 0.1);
+}
+
+textarea {
+  height: 80px;
+}
+
+.submit-button {
+  height: 50px;
+  background: none;
+  border: 1px solid #2670ff;
+}
+
+.submit-button:hover {
+  background-color: #2670ff;
+  color: white;
+}
+
+/* 게시글 수정 */
+/* 이미지 미리보기 스타일 */
+.image-preview {
+  margin-top: 10px;
+  display: flex;
+  overflow-x: auto; /* 좌우 스크롤 활성화 */
+  flex-wrap: nowrap; /* 줄바꿈 방지 */
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.image-item {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.delete-image-button {
+  position: absolute;
+  top: -1px;
+  right: -5px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* 스크롤바 스타일링 */
+.image-preview::-webkit-scrollbar {
+  height: 8px;
+}
+
+.image-preview::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+.image-preview::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}

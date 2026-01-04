@@ -1,0 +1,68 @@
+/* 전체 컨테이너 */
+.report-container {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  border: 1px solid #2670ff; /* 외곽선 */
+  border-radius: 10px; /* 둥근 모서리 */
+  padding: 20px;
+}
+
+/* 헤더 */
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.report-header h3 {
+  flex-grow: 1;
+  text-align: center; /* 중앙 정렬 */
+  color: #2670ff; /* 텍스트 색상 */
+}
+
+/* 신고 내용 */
+.report-content {
+  padding: 20px;
+}
+
+.report-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* 라디오 버튼 스타일 */
+.report-content label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.report-content input[type="radio"] {
+  margin-right: 10px; /* 라디오 버튼과 텍스트 간격 */
+}
+
+/* 텍스트 입력 필드 */
+textarea {
+  width: calc(100% - 20px);
+  height: auto;
+  min-height: 50px; /* 최소 높이 설정 */
+  padding: 10px;
+  border-radius: 5px; /* 둥근 모서리 */
+  border: solid #2670ff; /* 외곽선 색상 */
+}
+
+/* 제출 버튼 */
+.submit-button {
+  width: calc(100% - 40px);
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #2670ff; /* 파란색 배경 */
+  color: white; /* 텍스트 색상 */
+  border-radius: 5px; /* 둥근 모서리 */
+}
+
+.submit-button:hover {
+}

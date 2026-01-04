@@ -1,0 +1,67 @@
+/* 받은 후기 섹션 */
+.seller-review-container {
+    margin-top: 30px;
+    padding: 0 16px;
+  }
+  
+  /* 제목 스타일 (섹션 제목) */
+  .seller-review-container h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+    padding-left: 4px;
+  }
+  
+  /* 개별 리뷰 카드 */
+  .review-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  }
+  
+  /* 리뷰 상단 (닉네임 + 별점) */
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #222;
+  }
+  
+  /* 별점 */
+  .review-rating {
+    color: #f5a623; /* 노란 별 느낌 */
+    font-size: 14px;
+  }
+  
+  /* 리뷰 내용 */
+  .review-comment {
+    font-size: 14px;
+    margin: 10px 0 6px;
+    color: #444;
+    line-height: 1.4;
+  }
+  
+  /* 작성일 */
+  .review-date {
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+  }
+  
+  /* 이모지 강조용 */
+  .review-emoji {
+    margin-right: 6px;
+  }
+  
+  .review-item {
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 6px;
+  }

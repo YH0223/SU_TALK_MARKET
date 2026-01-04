@@ -1,0 +1,35 @@
+.category-filter {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  margin: 80px 5px 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.category-button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.category-button.active {
+  background-color: #2670ff;
+  color: white;
+}
+
+.category-button:hover {
+  background-color: #2670ff;
+}
+
+.category-filter {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

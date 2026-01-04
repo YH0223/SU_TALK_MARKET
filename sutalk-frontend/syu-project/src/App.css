@@ -1,0 +1,24 @@
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+
+.span[data-testid="clip-loader"] > div {
+  animation: none !important;
+  transform: none !important;
+}
+
+.page-with-topbar {
+  padding-top: 50px; /* TopBar 높이 */
+}

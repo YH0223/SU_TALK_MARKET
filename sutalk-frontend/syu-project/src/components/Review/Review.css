@@ -1,0 +1,128 @@
+/* 전체 컨테이너 */
+.review-container {
+  width: 100%;
+  /* max-width: 400px; */
+  margin: auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 헤더 */
+.review-header {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.report-button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: red;
+  font-weight: bold;
+}
+
+.review-container .review-header h3 {
+  color: #2670ff;
+}
+
+/* 리뷰 컨텐츠 */
+.review-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-avatar {
+  width: 120px; /* 아바타 크기 */
+  height: 120px; /* 아바타 크기 */
+  border-radius: 50%; /* 원형으로 설정 */
+  overflow: hidden;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 프로필 이름 */
+.profile-name {
+  font-size: 18px;
+  margin: 10px 0 30px;
+}
+
+/* 별점 */
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.star {
+  font-size: 38px;
+  color: #ccc;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.star:hover {
+  transform: scale(1.15);
+}
+
+.star:active {
+  transform: scale(0.95);
+}
+/* 리뷰 텍스트 */
+.review-textarea {
+  width: 100%;
+  max-width: 400px;
+  height: 160px;
+  font-size: 16px;
+  padding: 12px;
+  border: 2px solid #2670ff;
+  border-radius: 12px;
+  outline: none;
+  resize: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease;
+  margin-top: 20px;
+}
+
+.review-textarea:focus {
+  border-color: #1a4ed8;
+}
+
+/* 완료 버튼 */
+.complete-button {
+  padding: 12px 32px;
+  background-color: #2670ff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 20px;
+}
+
+.complete-button:hover {
+  background-color: #1f59cc;
+}
